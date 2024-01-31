@@ -56,10 +56,12 @@ const bibleChapters = [
   }
 ]
 
-if (date == "2024/1/31") {
-  const bookChapters = document.getElementById('bibleBook');
-  const todaChapters = document.getElementById('todayReading');
+const bookChapters = document.getElementById('bibleBook');
+const todaChapters = document.getElementById('todayReading');
 
+if (date == "2024/1/31") {
   bookChapters.innerHTML = bibleChapters[0].chapter[0];
-  todaChapters.innerHTML = bibleChapters[0].verses.slice(0, 23);
-} 
+  for (let i = 0; i < bibleChapters[0].verses.length; i++) {
+    todaChapters.innerHTML += bibleChapters[0].verses[i] + "<br>";
+  }
+}
